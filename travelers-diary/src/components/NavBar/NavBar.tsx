@@ -1,6 +1,6 @@
 import { AppBar, makeStyles, Toolbar, Button, Grid } from '@material-ui/core';
 import React from 'react';
-import { CustomLink } from './../CustomLink/CustomLink';
+import { CustomLink } from '../CustomLink/CustomLink';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const styles = makeStyles((theme) => ({
