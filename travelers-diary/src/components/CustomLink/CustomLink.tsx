@@ -27,9 +27,7 @@ type ListItemLinkProps = {
 	color?: 'white' | 'gold';
 };
 
-export const CustomLink: React.FC<ListItemLinkProps> = (
-	props: ListItemLinkProps
-) => {
+export const CustomLink: React.FC<ListItemLinkProps> = (props) => {
 	const classes = styles();
 	const { color, startIcon, endIcon, primary, to } = props;
 
@@ -49,7 +47,6 @@ export const CustomLink: React.FC<ListItemLinkProps> = (
 	return (
 		<Button
 			className={`${classes.btn} ${color === undefined ? '' : classes[color]}`}
-			disableRipple
 			component={renderLink}
 			startIcon={startIcon}
 			endIcon={endIcon}
