@@ -1,3 +1,3 @@
-import { ContentBlock } from './ContentBlock';
+import { ContentBlock } from './contentBlock';
 
 export default ContentBlock;
