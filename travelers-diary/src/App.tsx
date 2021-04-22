@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import MainPage from './pages/MainPage';
 
@@ -13,6 +14,7 @@ function App() {
       </Switch>
     </Router>
   );
+
 }
 
 export default App;
