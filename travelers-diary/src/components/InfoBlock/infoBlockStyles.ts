@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-const useInfoBlockStyles = makeStyles({
+export const useInfoBlockStyles = makeStyles({
     root: {
       maxWidth: 345,
     },
@@ -10,4 +10,18 @@ const useInfoBlockStyles = makeStyles({
     },
   });
 
-export default useInfoBlockStyles;
+export const useContentBlockStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+      marginTop: 10,
+    },
+    paper: {
+      height: 140,
+      width: 100,
+    },
+    control: {
+      padding: theme.spacing(2),
+    },
+  })
+);

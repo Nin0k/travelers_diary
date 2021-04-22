@@ -5,12 +5,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Chip from '@material-ui/core/Chip';
 import Typography from '@material-ui/core/Typography';
-import useInfoBlockStyles from './infoBlockStyles';
+import { useInfoBlockStyles } from './infoBlockStyles';
 import { TypeResort } from "./types";
 
 export const InfoBlock: React.FC<TypeResort> = ({country, city, tags, description}) =>  {
    
-    const classes = useInfoBlockStyles();
+  const classes = useInfoBlockStyles();
 
   return (
     <Card className={classes.root}>

@@ -1,8 +1,11 @@
-import React from 'react';
-import ContentBlock from '../../components/InfoBlock'
+import React from "react";
+import ContentBlock from "../../components/InfoBlock";
+import NavBar from "../../components/NavBar";
 function MainPage() {
-  return  <ContentBlock/>;
-  
+  return <>
+   <NavBar/>
+  <ContentBlock />;
+  </>
 }
-  
+
 export default MainPage;
