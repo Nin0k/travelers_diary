@@ -5,6 +5,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import MainPage from "./pages/MainPage";
+import NewsPage from "./pages/NewsPage";
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
             <Switch>
                 <Redirect exact from="/" to="/main" />
                 <Route path="/main" component={MainPage} />
-                <Route path="/news" />
+                <Route path="/news" component={NewsPage}/>
                 <Route path="/lk" />
                 <Route path="/about" />
             </Switch>
