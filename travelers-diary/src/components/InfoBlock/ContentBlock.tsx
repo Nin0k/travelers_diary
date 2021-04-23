@@ -39,8 +39,8 @@ export const ContentBlock: React.FC = () => {
             <Grid item xs={12}>
                 <Grid container justify="center" spacing={spacing}>
                     {resorts.map((value: TypeResort, item: number) => (
-                        <Grid key={item} item>
-                            <InfoBlock {...value} />
+                        <Grid item>
+                            <InfoBlock {...value} key={item}/>
                         </Grid>
                     ))}
                 </Grid>
