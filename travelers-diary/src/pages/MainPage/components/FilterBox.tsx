@@ -6,26 +6,26 @@ import {
   TextField,
   Typography,
   FormControlLabel,
-} from '@material-ui/core';
-import React from 'react';
+} from "@material-ui/core";
+import React from "react";
 
 const styles = makeStyles((theme) => ({
   filterBox: {
-    marginTop: '15px',
-    border: '1px solid #949494',
-    padding: '15px',
-    borderRadius: '5px',
+    marginTop: "15px",
+    border: "1px solid #949494",
+    padding: "15px",
+    borderRadius: "5px",
   },
 }));
 
 export const FilterBox: React.FC = () => {
   const classes = styles();
   const checkBoxes = [
-    'Море',
-    'Горы',
-    'Достопремичательности',
-    'Семейный отдых',
-    'Активный отдых',
+    "Море",
+    "Горы",
+    "Достопремичательности",
+    "Семейный отдых",
+    "Активный отдых",
   ];
   return (
     <Box component='div' className={classes.filterBox}>
@@ -59,11 +59,12 @@ export const FilterBox: React.FC = () => {
           alignContent='space-around'
           justify='space-around'
         >
-          {checkBoxes.map((item) => {
+          {checkBoxes.map((item, index) => {
             return (
               <FormControlLabel
                 control={<Checkbox color='primary' />}
                 label={item}
+                key={index}
               />
             );
           })}
