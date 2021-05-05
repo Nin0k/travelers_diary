@@ -17,7 +17,7 @@ async function dbConnect() {
 
 dbConnect();
 
-app.use('/getinfo', require('./routes/RestPlaceInfos'));
+app.use('/getinfo', require('./routes/RestPlaceInfo'));
 
 const db = mongoose.connection;
 db.once('open', () => {
