@@ -7,7 +7,7 @@ require('dotenv').config();
 async function dbConnect() {
   try {
     await mongoose.connect(
-      `mongodb+srv://${process.env.DB_LOGIN}:${process.env.DB_PASS}@td.zd0th.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.DB_LOGIN}:${process.env.DB_PASS}@td.zd0th.mongodb.net/app?retryWrites=true&w=majority`,
       { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
     );
   } catch (e) {
