@@ -19,7 +19,7 @@ async function dbConnect() {
 dbConnect();
 
 app.use('/api/getinfo', require('./routes/RestPlaceInfo'));
-app.use('/api', require('./routes/CreateResortCard.ts'));
+app.use('/api/resort', require('./routes/Resort.ts'));
 
 const db = mongoose.connection;
 db.once('open', () => {

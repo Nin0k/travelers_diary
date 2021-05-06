@@ -18,9 +18,18 @@ const router = Router();
 //   }
 // });
 
-router.post('/createcard', async (req, res) => {
+router.post('/create', async (req, res) => {
   try {
-    console.log(req.body);
+    console.log('Создание');
+  } catch (e) {
+    res.status(500).json({ message: e.message });
+  }
+});
+
+router.put('/edit/:id', async (req, res) => {
+  try {
+    console.log(req.params.id);
+    console.log('Редактирование');
   } catch (e) {
     res.status(500).json({ message: e.message });
   }
