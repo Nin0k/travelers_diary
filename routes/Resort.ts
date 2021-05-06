@@ -26,9 +26,8 @@ router.post('/create', async (req, res) => {
   }
 });
 
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit', async (req, res) => {
   try {
-    console.log(req.params.id);
     console.log('Редактирование');
   } catch (e) {
     res.status(500).json({ message: e.message });
