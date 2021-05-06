@@ -18,7 +18,8 @@ async function dbConnect() {
 
 dbConnect();
 
-app.use('/getinfo', require('./routes/RestPlaceInfo'));
+app.use('/api/getinfo', require('./routes/RestPlaceInfo'));
+app.use('/api', require('./routes/CreateResortCard.ts'));
 
 const db = mongoose.connection;
 db.once('open', () => {
