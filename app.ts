@@ -1,3 +1,5 @@
+import cors from 'cors';
+
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -17,7 +19,7 @@ async function dbConnect() {
 }
 
 dbConnect();
-
+app.use(cors());
 app.use('/api/getinfo', require('./routes/RestPlaceInfo'));
 app.use('/api/resort', require('./routes/Resort.ts'));
 

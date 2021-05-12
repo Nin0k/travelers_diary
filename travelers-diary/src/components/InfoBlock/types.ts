@@ -1,6 +1,7 @@
 export type TypeResort = {
     country: string;
-    city: string;
+    location:  string;
+    description:  string;
     tags: string[];
-    description: string;
+    image: any;
 };

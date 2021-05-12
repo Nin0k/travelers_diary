@@ -1,50 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Grid, { GridSpacing } from "@material-ui/core/Grid";
 import { InfoBlock } from "./InfoBlock";
 import { TypeResort } from "./types";
 import { useContentBlockStyles } from "./infoBlockStyles";
+import { getAllResorts } from "./getAllResorts";
 
 export const ContentBlock: React.FC = () => {
-  const classes = useContentBlockStyles();
-  const resorts = [
-    {
-      country: "Италия",
-      city: "Римини",
-      tags: ["Море", "Семейный отдых"],
-      description: `освоенная и используемая с целью лечения, медицинской реабилитации, 
-      профилактики заболеваний и оздоровления особо охраняемая природная территория, 
-      располагающая природными лечебными ресурсами и необходимыми для их эксплуатации зданиями и сооружениями`,
-    },
-    {
-      country: "Китай",
-      city: "Остров Хайнань",
-      tags: ["Активный отдых", "Море"],
-      description: `освоенная и используемая с целью лечения, медицинской реабилитации, 
-      профилактики заболеваний и оздоровления особо охраняемая природная территория, 
-      располагающая природными лечебными ресурсами и необходимыми для их эксплуатации зданиями и сооружениями`,
-    },
-    {
-      country: "Греция",
-      city: "Крит",
-      tags: ["Активный отдых", "Достопримечательности"],
-      description: `освоенная и используемая с целью лечения, медицинской реабилитации, 
-      профилактики заболеваний и оздоровления особо охраняемая природная территория, 
-      располагающая природными лечебными ресурсами и необходимыми для их эксплуатации зданиями и сооружениями`,
-    },
-  ];
-  const spacing: GridSpacing = 2;
+    const classes = useContentBlockStyles();
+    const spacing: GridSpacing = 2;
+    const [resorts, setResorts] = useState<TypeResort[]>([]);
 
-  return (
-    <Grid container className={classes.root} spacing={spacing}>
-      <Grid item xs={12}>
-        <Grid container justify='center' spacing={spacing}>
-          {resorts.map((value: TypeResort, index: number) => (
-            <Grid item key={index}>
-              <InfoBlock {...value} />
+    useEffect(() => {
+        getAllResorts().then(
+            (response) => {
+                setResorts(response);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    },[]);
+
+    return (
+        <Grid container className={classes.root} spacing={spacing}>
+            <Grid item xs={12}>
+                <Grid container justify="center" spacing={spacing}>
+                    {resorts.map((value: TypeResort, index: number) => (
+                        <Grid item key={index}>
+                            <InfoBlock {...value} />
+                        </Grid>
+                    ))}
+                </Grid>
             </Grid>
-          ))}
         </Grid>
-      </Grid>
-    </Grid>
-  );
+    );
 };
