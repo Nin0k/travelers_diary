@@ -1,4 +1,4 @@
-import { TypeResort } from './types';
+import { TypeResort } from '../components/InfoBlock/types';
 
 const url = `/api/getinfo/all`;
 
