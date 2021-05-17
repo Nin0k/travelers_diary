@@ -2,7 +2,7 @@ import { TypeResort } from '../components/InfoBlock/types';
 
 const url = `/api/getinfo/all`;
 
-export const getAllResorts = () => {
+export const getAllResortsApi = () => {
   return new Promise<TypeResort[]>((resolve, reject) => {
     fetch(url).then(
       (response) => {
